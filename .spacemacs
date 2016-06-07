@@ -241,7 +241,11 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+  (setq-default
+   dotspacemacs-auto-resume-layouts t
   )
+)
+
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
@@ -252,9 +256,6 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (setq org-agenda-span 'day)
   (add-to-list 'default-frame-alist '(fullscreen . maximized))
-  ;; following setting is not working
-  ;; (setq dotspacemacs-maximized-at-startup t)  
-  (setq dotspacemacs-auto-resume-layouts t)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -264,7 +265,8 @@ you should place your code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(org-agenda-files (quote ("~/Dropbox/Personal/GTD/gtd_main.org"))))
+ '(org-agenda-files (quote ("~/Dropbox/Personal/GTD/gtd_main.org")))
+ '(sp-base-key-bindings (quote sp)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
