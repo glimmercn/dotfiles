@@ -41,7 +41,8 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(
+                                      swiper-helm)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -233,6 +234,10 @@ values."
    ;; (default nil)
    dotspacemacs-whitespace-cleanup nil
    ))
+(defun open-my-init-file()
+  (interactive)
+  (find-file "~/.spacemacs")
+  )
 
 (defun dotspacemacs/user-init ()
   "Initialization function for user code.
@@ -254,8 +259,12 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  (global-set-key (kbd "<f2>") 'open-my-init-file)
+  (global-set-key (kbd "C-s") 'swiper)
   (setq org-agenda-span 'day)
   (add-to-list 'default-frame-alist '(fullscreen . maximized))
+
+  (ivy-mode t)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -266,6 +275,7 @@ you should place your code here."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(org-agenda-files (quote ("~/Dropbox/Personal/GTD/gtd_main.org")))
+ '(paradox-github-token t)
  '(sp-base-key-bindings (quote sp)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
