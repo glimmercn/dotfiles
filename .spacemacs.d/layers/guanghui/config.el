@@ -41,7 +41,6 @@
                                             ("8win" "Windows")
                                             ("8ie" "Internet Explorer")
                                             ("8ahk" "AutoHotkey")
-                                            ("82dx" "Cocos2D-X")
 
                                             ;; signature
                                             ("8zl" "zilongshanren")
@@ -50,4 +49,5 @@
                                             ("8str" "\\([^\"]+?\\)\"")))
 
 
-(setq user-mail-address "guanghui8827@gmail.com")
+(setq user-mail-address "huangkandiy@gmail.com")
+(setq ivy-initial-inputs-alist nil)
