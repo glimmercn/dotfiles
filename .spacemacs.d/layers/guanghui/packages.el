@@ -815,31 +815,35 @@ This segment overrides the modeline functionality of `org-mode-line-string'."
       ;;http://www.howardism.org/Technical/Emacs/journaling-org.html
       ;;add multi-file journal
       (setq org-capture-templates
-            '(("t" "Todo" entry (file+headline "~/org-notes/gtd.org" "Workspace")
-               "* TODO [#B] %?\n  %i\n"
+            '(("w" "work" entry (file+headline "~/org-notes/gtd.org" "Mentor")
+               "* TODO [#A] %?\n  %i  \n"
                :empty-lines 1)
-              ("n" "notes" entry (file+headline "~/org-notes/notes.org" "Quick notes")
-               "* %?\n  %i\n %U"
-               :empty-lines 1)
-              ("b" "Blog Ideas" entry (file+headline "~/org-notes/notes.org" "Blog Ideas")
+              ("p" "project" entry (file+headline "~/org-notes/gtd.org" "Projects")
                "* TODO [#B] %?\n  %i\n %U"
                :empty-lines 1)
-              ("s" "Code Snippet" entry
-               (file "~/org-notes/snippets.org")
-               "* %?\t%^g\n#+BEGIN_SRC %^{language}\n\n#+END_SRC")
-              ("w" "work" entry (file+headline "~/org-notes/gtd.org" "Cocos2D-X")
-               "* TODO [#A] %?\n  %i\n %U"
+              ("f" "family and life" entry (file+headline "~/org-notes/gtd.org" "Life")
+               "* TODO [#B] %?\n  %i\n %U"
                :empty-lines 1)
+              ("t" "trivia" entry (file+headline "~/org-notes/gtd.org" "Trivia")
+               "* TODO [#C] %?\n  %i\n %U"
+               :empty-lines 1)
+              ;; still need some work to get ubuntu version of retrieve-chrome-current-tab-url.
               ("c" "Chrome" entry (file+headline "~/org-notes/notes.org" "Quick notes")
                "* TODO [#C] %?\n %(zilongshanren/retrieve-chrome-current-tab-url)\n %i\n %U"
                :empty-lines 1)
               ("l" "links" entry (file+headline "~/org-notes/notes.org" "Quick notes")
                "* TODO [#C] %?\n  %i\n %a \n %U"
                :empty-lines 1)
+              ("n" "notes" entry (file+headline "~/org-notes/notes.org" "Quick notes")
+               "* %?\n  %i\n %U"
+               :empty-lines 1)
               ("j" "Journal Entry"
                entry (file+datetree "~/org-notes/journal.org")
                "* %?"
                :empty-lines 1)))
+
+      (global-set-key (kbd "C-q") 'org-capture)))
+
 
       ;;An entry without a cookie is treated just like priority ' B '.
       ;;So when create new task, they are default 重要且紧急
