@@ -748,9 +748,9 @@ This segment overrides the modeline functionality of `org-mode-line-string'."
 
 (defun guanghui/post-init-org-pomodoro ()
   (progn
-    (add-hook 'org-pomodoro-finished-hook '(lambda () (zilongshanren/growl-notification "Pomodoro Finished" "☕️ Have a break!" t)))
-    (add-hook 'org-pomodoro-short-break-finished-hook '(lambda () (zilongshanren/growl-notification "Short Break" "🐝 Ready to Go?" t)))
-    (add-hook 'org-pomodoro-long-break-finished-hook '(lambda () (zilongshanren/growl-notification "Long Break" " 💪 Ready to Go?" t)))
+ ;;   (add-hook 'org-pomodoro-finished-hook '(lambda () (zilongshanren/growl-notification "Pomodoro Finished" "☕️ Have a break!" t)))
+ ;;   (add-hook 'org-pomodoro-short-break-finished-hook '(lambda () (zilongshanren/growl-notification "Short Break" "🐝 Ready to Go?" t)))
+ ;;   (add-hook 'org-pomodoro-long-break-finished-hook '(lambda () (zilongshanren/growl-notification "Long Break" " 💪 Ready to Go?" t)))
     ))
 
 (defun guanghui/post-init-js2-mode ()
@@ -842,9 +842,7 @@ This segment overrides the modeline functionality of `org-mode-line-string'."
                "* %?"
                :empty-lines 1)))
 
-      (global-set-key (kbd "C-q") 'org-capture)))
-
-
+      (global-set-key (kbd "C-q") 'org-capture)
       ;;An entry without a cookie is treated just like priority ' B '.
       ;;So when create new task, they are default 重要且紧急
       (setq org-agenda-custom-commands
@@ -956,8 +954,7 @@ This segment overrides the modeline functionality of `org-mode-line-string'."
       (spacemacs/set-leader-keys-for-major-mode 'org-mode
         "tl" 'org-toggle-link-display)
       (define-key evil-normal-state-map (kbd "C-c C-w") 'org-refile)
-      (setq org-mobile-directory "~/org-notes/org")
-      )))
+      (setq org-mobile-directory "~/org-notes/org"))))
 
 (defun guanghui/post-init-prodigy ()
   (progn

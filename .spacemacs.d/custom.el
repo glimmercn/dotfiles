@@ -49,7 +49,9 @@
  '(org-deadline-warning-days 14)
  '(org-fast-tag-selection-single-key (quote expert))
  '(org-log-into-drawer t)
- '(org-pomodoro-play-sounds nil)
+ '(org-pomodoro-finished-sound-args nil)
+ '(org-pomodoro-length 30)
+ '(org-pomodoro-play-sounds t)
  '(org-reverse-note-order t)
  '(package-selected-packages
    (quote
