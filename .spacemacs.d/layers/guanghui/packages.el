@@ -816,16 +816,16 @@ This segment overrides the modeline functionality of `org-mode-line-string'."
       ;;add multi-file journal
       (setq org-capture-templates
             '(("w" "work" entry (file+headline "~/org-notes/gtd.org" "Mentor")
-               "* TODO [#A] %?\n  %i  \n"
+               "* TODO [#A] %?     :WORK: \n  %i   \n"
                :empty-lines 1)
               ("p" "project" entry (file+headline "~/org-notes/gtd.org" "Projects")
-               "* TODO [#B] %?\n  %i\n %U"
+               "* TODO [#B] %?     :PROJECT: \n  %i\n %U"
                :empty-lines 1)
               ("f" "family and life" entry (file+headline "~/org-notes/gtd.org" "Life")
-               "* TODO [#B] %?\n  %i\n %U"
+               "* TODO [#B] %?     :LIFE: \n  %i\n %U"
                :empty-lines 1)
               ("t" "trivia" entry (file+headline "~/org-notes/gtd.org" "Trivia")
-               "* TODO [#C] %?\n  %i\n %U"
+               "* TODO [#C] %?     :TRIVIA: \n  %i\n %U"
                :empty-lines 1)
               ;; still need some work to get ubuntu version of retrieve-chrome-current-tab-url.
               ("c" "Chrome" entry (file+headline "~/org-notes/notes.org" "Quick notes")
@@ -919,7 +919,7 @@ This segment overrides the modeline functionality of `org-mode-line-string'."
         (let* ((timerange-numeric-value (prefix-numeric-value timerange))
                (files (org-add-archive-files (org-agenda-files)))
                (include-tags '("WORK" "EMACS" "DREAM" "WRITING" "MEETING"
-                               "LIFE" "PROJECT" "OTHER"))
+                               "LIFE" "PROJECT" "TRIVIA"))
                (tags-time-alist (mapcar (lambda (tag) `(,tag . 0)) include-tags))
                (output-string "")
                (tstart (or tstart
