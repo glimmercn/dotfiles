@@ -153,7 +153,7 @@
     ;; show tab;  use untabify to convert tab to whitespace
     (setq spacemacs-show-trailing-whitespace nil)
 
-    (setq-default tab-width 4)
+    (setq-default tab-width 2)
     ;; set-buffer-file-coding-system -> utf8 to convert dos to utf8
     ;; (setq inhibit-eol-conversion t)
     ;; (add-hook 'prog-mode-hook 'whitespace-mode)
@@ -174,8 +174,8 @@
     (diminish 'whitespace-mode)))
 
 (defun zilongshanren/post-init-js-doc ()
-  (setq js-doc-mail-address "guanghui8827@gmail.com"
-        js-doc-author (format "Guanghui Qu <%s>" js-doc-mail-address)
+  (setq js-doc-mail-address "huangkandiy@gmail.com"
+        js-doc-author (format "Kan Huang<%s>" js-doc-mail-address)
         js-doc-url "http://www.zilongshanren.com"
         js-doc-license "MIT"))
 

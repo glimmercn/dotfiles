@@ -919,7 +919,7 @@ This segment overrides the modeline functionality of `org-mode-line-string'."
         (let* ((timerange-numeric-value (prefix-numeric-value timerange))
                (files (org-add-archive-files (org-agenda-files)))
                (include-tags '("WORK" "EMACS" "DREAM" "WRITING" "MEETING"
-                               "LIFE" "PROJECT" "TRIVIA"))
+                               "LIFE" "PROJECT" ""))
                (tags-time-alist (mapcar (lambda (tag) `(,tag . 0)) include-tags))
                (output-string "")
                (tstart (or tstart
