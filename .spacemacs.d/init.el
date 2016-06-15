@@ -32,6 +32,7 @@ values."
    dotspacemacs-configuration-layers
    '(
      helm
+     helm-gtags
      ivy
      ;; react
      better-defaults
@@ -59,6 +60,7 @@ values."
      emacs-lisp
      (clojure :variables clojure-enable-fancify-symbols t)
      ranger
+
      ;; racket
      (spacemacs-layouts :variables layouts-enable-autosave t
                         layouts-autosave-delay 300)
@@ -214,7 +216,7 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(solarized-light solarized-dark)
+   dotspacemacs-themes '(deeper-blue swheatgrass olarized-dark)
    ;; If non nil the cursor color matches the state color.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line

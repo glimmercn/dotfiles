@@ -24,6 +24,7 @@
         ;; evil-escape
         (cc-mode :location built-in)
         youdao-dictionary
+
         ;; chinese-wbim
         multiple-cursors
         visual-regexp-steroids
