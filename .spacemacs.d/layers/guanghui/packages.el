@@ -24,7 +24,7 @@
         ;; evil-escape
         (cc-mode :location built-in)
         youdao-dictionary
-
+        helm-gtags
         ;; chinese-wbim
         multiple-cursors
         visual-regexp-steroids
@@ -39,7 +39,7 @@
         ;; elfeed
         fcitx
         lua-mode
-        ;; ycmd
+        ycmd
         ;; mwe-log-commands
         org-pomodoro
         discover-my-major
@@ -57,7 +57,6 @@
         etags-select
         spaceline
         ))
-
 (defun guanghui/post-init-spaceline ()
   (use-package spaceline-config
     :config
@@ -577,6 +576,28 @@ This segment overrides the modeline functionality of `org-mode-line-string'."
             sp-delete-char
             sp-remove-active-pair-overlay))))
 
+(defun guanghui/init-helm-gtags ()
+ (use-package helm-gtags
+   :config
+   (progn
+     (add-hook 'c-mode-hook 'helm-gtags-mode)
+     (add-hook 'c++-mode-hook 'helm-gtags-mode)
+     (add-hook 'asm-mode-hook 'helm-gtags-mode)
+
+     ;; Set key bindings
+     (eval-after-load "helm-gtags"
+       '(progn
+          (define-key helm-gtags-mode-map (kbd "M-t") 'helm-gtags-find-tag)
+          (define-key helm-gtags-mode-map (kbd "M-r") 'helm-gtags-find-rtag)
+          (define-key helm-gtags-mode-map (kbd "M-s") 'helm-gtags-find-symbol)
+          (define-key helm-gtags-mode-map (kbd "M-g M-p") 'helm-gtags-parse-file)
+          (define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
+          (define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
+          (define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack))))))
+
+(defun guanghuang/post-init-helm-gtags () )
+
+
 (defun guanghui/post-init-persp-mode ()
   (when (fboundp 'spacemacs|define-custom-layout)
     (spacemacs|define-custom-layout "@Cocos2D-X"
@@ -691,7 +712,7 @@ This segment overrides the modeline functionality of `org-mode-line-string'."
 
 
     (setq c-default-style "linux") ;; set style to "linux"
-    (setq c-basic-offset 4)
+    (setq c-basic-offset 2)
     (c-set-offset 'substatement-open 0)
     (with-eval-after-load 'c++-mode
       (define-key c++-mode-map (kbd "s-.") 'company-ycmd)))

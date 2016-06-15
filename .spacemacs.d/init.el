@@ -32,7 +32,6 @@ values."
    dotspacemacs-configuration-layers
    '(
      helm
-     helm-gtags
      ivy
      ;; react
      better-defaults
@@ -372,9 +371,10 @@ any user code here.  The exception is org related code, which should be placed
 in `dotspacemacs/user-config'."
   (setq configuration-layer--elpa-archives
         '(("melpa"    . "melpa.org/packages/")
-          ("melpa-cn" . "https://elpa.zilongshanren.com/melpa/")
-          ("org-cn"   . "https://elpa.zilongshanren.com/org/")
-          ("gnu-cn"   . "https://elpa.zilongshanren.com/gnu/")))
+          ;; ("melpa-cn" . "https://elpa.zilongshanren.com/melpa/")
+          ;; ("org-cn"   . "https://elpa.zilongshanren.com/org/")
+          ;; ("gnu-cn"   . "https://elpa.zilongshanren.com/gnu/")
+          ))
  
   ;; https://github.com/syl20bnr/spacemacs/issues/2705
   ;; (setq tramp-mode nil)
@@ -437,7 +437,6 @@ layers configuration."
 
   (add-hook 'find-file-hook 'spacemacs/check-large-file)
   (spacemacs/toggle-automatic-symbol-highlight-on)
-
   ;; For python
   (add-hook 'python-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
   ;; For ruby
