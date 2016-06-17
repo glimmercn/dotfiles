@@ -216,6 +216,9 @@ This segment overrides the modeline functionality of `org-mode-line-string'."
 
       (evilified-state-evilify makey-key-mode makey-key-mode-get-key-map))))
 
+(defun guanghui/init-ycmd()
+  (use-package ycmd))
+
 (defun guanghui/post-init-ycmd ()
   (progn
     (setq ycmd-tag-files 'auto)
@@ -595,7 +598,7 @@ This segment overrides the modeline functionality of `org-mode-line-string'."
           (define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
           (define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack))))))
 
-(defun guanghuang/post-init-helm-gtags () )
+(defun guanghui/post-init-helm-gtags () )
 
 
 (defun guanghui/post-init-persp-mode ()
