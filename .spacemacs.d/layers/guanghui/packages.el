@@ -769,7 +769,7 @@ This segment overrides the modeline functionality of `org-mode-line-string'."
     (spacemacs/set-leader-keys-for-major-mode 'deft-mode "q" 'quit-window)
     (setq deft-recursive t)
     (setq deft-extension "org")
-    (setq deft-directory "~/org-notes")))
+    (setq deft-directory "~/Dropbox/org-notes")))
 
 (defun guanghui/post-init-org-pomodoro ()
   (progn
@@ -827,8 +827,8 @@ This segment overrides the modeline functionality of `org-mode-line-string'."
   (with-eval-after-load 'org
     (progn
       ;; define the refile targets
-      (setq org-agenda-files (quote ("~/org-notes" )))
-      (setq org-default-notes-file "~/org-notes/gtd.org")
+      (setq org-agenda-files (quote ("~/Dropbox/org-notes" )))
+      (setq org-default-notes-file "~/Dropbox/org-notes/gtd.org")
       (setq org-agenda-start-on-weekday 1)
 
       (with-eval-after-load 'org-agenda
@@ -840,30 +840,30 @@ This segment overrides the modeline functionality of `org-mode-line-string'."
       ;;http://www.howardism.org/Technical/Emacs/journaling-org.html
       ;;add multi-file journal
       (setq org-capture-templates
-            '(("w" "work" entry (file+headline "~/org-notes/gtd.org" "Mentor")
+            '(("w" "work" entry (file+headline "~/Dropbox/org-notes/gtd.org" "Mentor")
                "* TODO [#A] %?     :WORK: \n  %i   \n"
                :empty-lines 1)
-              ("p" "project" entry (file+headline "~/org-notes/gtd.org" "Projects")
+              ("p" "project" entry (file+headline "~/Dropbox/org-notes/gtd.org" "Projects")
                "* TODO [#B] %?     :PROJECT: \n  %i\n %U"
                :empty-lines 1)
-              ("f" "family and life" entry (file+headline "~/org-notes/gtd.org" "Life")
+              ("f" "family and life" entry (file+headline "~/Dropbox/org-notes/gtd.org" "Life")
                "* TODO [#B] %?     :LIFE: \n  %i\n %U"
                :empty-lines 1)
-              ("t" "trivia" entry (file+headline "~/org-notes/gtd.org" "Trivia")
+              ("t" "trivia" entry (file+headline "~/Dropbox/org-notes/gtd.org" "Trivia")
                "* TODO [#C] %?     :TRIVIA: \n  %i\n %U"
                :empty-lines 1)
               ;; still need some work to get ubuntu version of retrieve-chrome-current-tab-url.
-              ("c" "Chrome" entry (file+headline "~/org-notes/notes.org" "Quick notes")
+              ("c" "Chrome" entry (file+headline "~/Dropbox/org-notes/notes.org" "Quick notes")
                "* TODO [#C] %?\n %(zilongshanren/retrieve-chrome-current-tab-url)\n %i\n %U"
                :empty-lines 1)
-              ("l" "links" entry (file+headline "~/org-notes/notes.org" "Quick notes")
+              ("l" "links" entry (file+headline "~/Dropbox/org-notes/notes.org" "Quick notes")
                "* TODO [#C] %?\n  %i\n %a \n %U"
                :empty-lines 1)
-              ("n" "notes" entry (file+headline "~/org-notes/notes.org" "Quick notes")
+              ("n" "notes" entry (file+headline "~/Dropbox/org-notes/notes.org" "Quick notes")
                "* %?\n  %i\n %U"
                :empty-lines 1)
               ("j" "Journal Entry"
-               entry (file+datetree "~/org-notes/journal.org")
+               entry (file+datetree "~/Dropbox/org-notes/journal.org")
                "* %?"
                :empty-lines 1)))
 
@@ -898,9 +898,9 @@ This segment overrides the modeline functionality of `org-mode-line-string'."
       (setq org-publish-project-alist
             `(
               ("blog-notes"
-               :base-directory "~/org-notes"
+               :base-directory "~/Dropbox/org-notes"
                :base-extension "org"
-               :publishing-directory "~/org-notes/public_html/"
+               :publishing-directory "~/Dropbox/org-notes/public_html/"
 
                :recursive t
                :html-head , zilongshanren-website-html-blog-head
@@ -920,9 +920,9 @@ This segment overrides the modeline functionality of `org-mode-line-string'."
                :sitemap-file-entry-format "%t" ; %d to output date, we don't need date here
                )
               ("blog-static"
-               :base-directory "~/org-notes"
+               :base-directory "~/Dropbox/org-notes"
                :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-               :publishing-directory "~/org-notes/public_html/"
+               :publishing-directory "~/Dropbox/org-notes/public_html/"
                :recursive t
                :publishing-function org-publish-attachment
                )
@@ -979,7 +979,7 @@ This segment overrides the modeline functionality of `org-mode-line-string'."
       (spacemacs/set-leader-keys-for-major-mode 'org-mode
         "tl" 'org-toggle-link-display)
       (define-key evil-normal-state-map (kbd "C-c C-w") 'org-refile)
-      (setq org-mobile-directory "~/org-notes/org"))))
+      (setq org-mobile-directory "~/Dropbox/org-notes/org"))))
 
 (defun guanghui/post-init-prodigy ()
   (progn
@@ -1037,7 +1037,7 @@ This segment overrides the modeline functionality of `org-mode-line-string'."
       :name "Org wiki preview"
       :command "python"
       :args '("-m" "SimpleHTTPServer" "8088")
-      :cwd "~/org-notes/public_html"
+      :cwd "~/Dropbox/org-notes/public_html"
       :tags '(org-mode)
       :init (lambda () (browse-url "http://localhost:8088"))
       :kill-signal 'sigkill

@@ -364,6 +364,10 @@ values."
    dotspacemacs-whitespace-cleanup 'changed
    ))
 
+(defun open-gtd-file ()
+  (interactive)
+  (find-file "~/Dropbox/org-notes/gtd.org"))
+
 (defun dotspacemacs/user-init ()
   "Initialization function for user code.
 It is called immediately after `dotspacemacs/init'.  You are free to put almost
@@ -384,7 +388,7 @@ in `dotspacemacs/user-config'."
   (setq socks-server '("Default server" "127.0.0.1" 1080 5))
   (setq evil-shift-round nil)
   (setq byte-compile-warnings '(not obsolete))
-
+  (global-set-key (kbd "<f2>") 'open-gtd-file)
   )
 
 (defun dotspacemacs/user-config ()

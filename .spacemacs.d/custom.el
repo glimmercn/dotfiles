@@ -77,7 +77,7 @@
     ("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4")))
  '(only-global-abbrevs t)
  '(org-agenda-custom-commands nil)
- '(org-agenda-files (quote ("~/org-notes/gtd.org")))
+ '(org-agenda-files (quote ("~/Dropbox/org-notes/gtd.org")))
  '(org-agenda-ndays 1)
  '(org-agenda-show-all-dates t)
  '(org-agenda-skip-deadline-if-done t)
