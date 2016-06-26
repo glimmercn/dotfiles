@@ -89,7 +89,7 @@
  '(org-fast-tag-selection-single-key (quote expert))
  '(org-log-into-drawer t)
  '(org-pomodoro-finished-sound-args nil)
- '(org-pomodoro-length 30)
+ '(org-pomodoro-length 25)
  '(org-pomodoro-play-sounds t)
  '(org-reverse-note-order t)
  '(package-selected-packages
@@ -108,6 +108,7 @@
    (quote
     ((eval setenv "PYTHONPATH" "/Users/guanghui/cocos2d-x/tools/cocos2d-console/plugins:/Users/guanghui/cocos2d-x/tools/cocos2d-console/bin"))))
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#eee8d5" 0.2))
+ '(sp-base-key-bindings (quote paredit))
  '(sp-show-pair-from-inside t)
  '(tags-add-tables nil)
  '(tags-revert-without-query t)

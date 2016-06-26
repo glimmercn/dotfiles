@@ -33,9 +33,11 @@ values."
    '(
      helm
      ivy
+     gtags
      ;; react
      better-defaults
      github
+     ycmd
      ;; (version-control :variables version-control-diff-tool 'git-gutter+
      ;;                  version-control-global-margin t)
      ;; osx
@@ -46,7 +48,7 @@ values."
      org
      prodigy
      search-engine
-     (syntax-checking :variables syntax-checking-enable-by-default nil)
+     (syntax-checking :variables syntax-checking-enable-by-default t)
      (spell-checking :variables spell-checking-enable-by-default nil)
      yaml
      ;; (ruby :variables ruby-version-manager 'rvm)
@@ -73,7 +75,8 @@ values."
           magit-revision-show-gravatars nil)
      (ibuffer :variables ibuffer-group-buffers-by 'projects)
      (c-c++ :variables
-            c-c++-default-mode-for-headers 'c++-mode)
+            c-c++-default-mode-for-headers 'c++-mode
+            c-c++-enable-clang-support t)
      (auto-completion :variables auto-completion-enable-sort-by-usage t
                       :disabled-for org markdown)
      (chinese :variables chinese-enable-youdao-dict t
@@ -389,7 +392,17 @@ in `dotspacemacs/user-config'."
   (setq evil-shift-round nil)
   (setq byte-compile-warnings '(not obsolete))
   (global-set-key (kbd "<f2>") 'open-gtd-file)
+  (eval-after-load "helm-gtags"
+    '(progn
+       (define-key helm-gtags-mode-map (kbd "M-t") 'helm-gtags-find-tag)
+       (define-key helm-gtags-mode-map (kbd "M-r") 'helm-gtags-find-rtag)
+       (define-key helm-gtags-mode-map (kbd "M-s") 'helm-gtags-find-symbol)
+       (define-key helm-gtags-mode-map (kbd "M-g M-p") 'helm-gtags-parse-file)
+       (define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
+       (define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
+       (define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack)))
   )
+  
 
 (defun dotspacemacs/user-config ()
   "Configuration function.
@@ -513,7 +526,7 @@ layers configuration."
   (when (configuration-layer/layer-usedp 'ivy)
     (setq projectile-switch-project-action 'zilongshanren/open-file-with-projectile-or-counsel-git))
 
-  )
 
 (setq custom-file (expand-file-name "custom.el" dotspacemacs-directory))
 (load custom-file 'no-error 'no-message)
+)

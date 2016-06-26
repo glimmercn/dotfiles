@@ -24,7 +24,6 @@
         ;; evil-escape
         (cc-mode :location built-in)
         youdao-dictionary
-        helm-gtags
         ;; chinese-wbim
         multiple-cursors
         visual-regexp-steroids
@@ -39,7 +38,6 @@
         ;; elfeed
         fcitx
         lua-mode
-        ycmd
         ;; mwe-log-commands
         org-pomodoro
         discover-my-major
@@ -215,29 +213,6 @@ This segment overrides the modeline functionality of `org-mode-line-string'."
       (spacemacs/set-leader-keys (kbd "mhm") 'discover-my-major)
 
       (evilified-state-evilify makey-key-mode makey-key-mode-get-key-map))))
-
-(defun guanghui/init-ycmd()
-  (use-package ycmd))
-
-(defun guanghui/post-init-ycmd ()
-  (progn
-    (setq ycmd-tag-files 'auto)
-    (setq ycmd-request-message-level -1)
-    (set-variable 'ycmd-server-command `("python" ,(expand-file-name "~/Github/ycmd/ycmd/__main__.py")))
-    (setq company-backends-c-mode-common '((company-c-headers
-                                            company-dabbrev-code
-                                            company-keywords
-                                            company-gtags :with company-yasnippet)
-                                           company-files company-dabbrev ))
-
-    (zilongshanren|toggle-company-backends company-ycmd)
-    (eval-after-load 'ycmd
-      '(spacemacs|hide-lighter ycmd-mode))
-
-    (spacemacs/set-leader-keys-for-major-mode 'c-mode
-      "tb" 'zilong/company-toggle-company-ycmd)
-    (spacemacs/set-leader-keys-for-major-mode 'c++-mode
-      "tb" 'zilong/company-toggle-company-ycmd)))
 
 (defun guanghui/post-init-lua-mode ()
   (progn
@@ -579,26 +554,26 @@ This segment overrides the modeline functionality of `org-mode-line-string'."
             sp-delete-char
             sp-remove-active-pair-overlay))))
 
-(defun guanghui/init-helm-gtags ()
- (use-package helm-gtags
-   :config
-   (progn
-     (add-hook 'c-mode-hook 'helm-gtags-mode)
-     (add-hook 'c++-mode-hook 'helm-gtags-mode)
-     (add-hook 'asm-mode-hook 'helm-gtags-mode)
-
-     ;; Set key bindings
-     (eval-after-load "helm-gtags"
-       '(progn
-          (define-key helm-gtags-mode-map (kbd "M-t") 'helm-gtags-find-tag)
-          (define-key helm-gtags-mode-map (kbd "M-r") 'helm-gtags-find-rtag)
-          (define-key helm-gtags-mode-map (kbd "M-s") 'helm-gtags-find-symbol)
-          (define-key helm-gtags-mode-map (kbd "M-g M-p") 'helm-gtags-parse-file)
-          (define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
-          (define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
-          (define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack))))))
-
-(defun guanghui/post-init-helm-gtags () )
+;; (defun guanghui/init-helm-gtags ()
+;;  (use-package helm-gtags
+;;    :config
+;;    (progn
+;;      (add-hook 'c-mode-hook 'helm-gtags-mode)
+;;      (add-hook 'c++-mode-hook 'helm-gtags-mode)
+;;      (add-hook 'asm-mode-hook 'helm-gtags-mode)
+;;
+;;      ;; Set key bindings
+;;      (eval-after-load "helm-gtags"
+;;        '(progn
+;;           (define-key helm-gtags-mode-map (kbd "M-t") 'helm-gtags-find-tag)
+;;           (define-key helm-gtags-mode-map (kbd "M-r") 'helm-gtags-find-rtag)
+;;           (define-key helm-gtags-mode-map (kbd "M-s") 'helm-gtags-find-symbol)
+;;           (define-key helm-gtags-mode-map (kbd "M-g M-p") 'helm-gtags-parse-file)
+;;           (define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
+;;           (define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
+;;           (define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack))))))
+;;
+;; (defun guanghui/post-init-helm-gtags () )
 
 
 (defun guanghui/post-init-persp-mode ()
