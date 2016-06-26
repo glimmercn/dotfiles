@@ -67,6 +67,9 @@
  '(hl-fg-colors
    (quote
     ("#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3")))
+ '(hlt-auto-face-backgrounds
+   (quote
+    ("black" "red" "green" "yellow" "blue" "magenta" "cyan" "white" "DeepPink" "MediumPurple1" "SpringGreen1" "DarkOrange" "HotPink1" highlight "deep sky blue" isearch-fail lazy-highlight mode-line mode-line-inactive next-error nobreak-space secondary-selection tooltip trailing-whitespace header-line mode-line-highlight)))
  '(ivy-height 18)
  '(js2-include-jslint-globals nil)
  '(lua-documentation-url "http://www.lua.org/manual/5.3/manual.html")
