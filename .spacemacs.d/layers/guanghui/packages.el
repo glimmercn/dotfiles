@@ -373,6 +373,7 @@ This segment overrides the modeline functionality of `org-mode-line-string'."
     ;; (bind-keys ("<C-[>" . evil-normal-state))
     ;; (setq evil-emacs-state-cursor '("chartreuse3" (bar . 2)))
     ;; (define-key evil-emacs-state-map [escape] 'evil-normal-state)
+
     ))
 
 
@@ -553,27 +554,6 @@ This segment overrides the modeline functionality of `org-mode-line-string'."
             sp-backward-delete-char
             sp-delete-char
             sp-remove-active-pair-overlay))))
-
-;; (defun guanghui/init-helm-gtags ()
-;;  (use-package helm-gtags
-;;    :config
-;;    (progn
-;;      (add-hook 'c-mode-hook 'helm-gtags-mode)
-;;      (add-hook 'c++-mode-hook 'helm-gtags-mode)
-;;      (add-hook 'asm-mode-hook 'helm-gtags-mode)
-;;
-;;      ;; Set key bindings
-;;      (eval-after-load "helm-gtags"
-;;        '(progn
-;;           (define-key helm-gtags-mode-map (kbd "M-t") 'helm-gtags-find-tag)
-;;           (define-key helm-gtags-mode-map (kbd "M-r") 'helm-gtags-find-rtag)
-;;           (define-key helm-gtags-mode-map (kbd "M-s") 'helm-gtags-find-symbol)
-;;           (define-key helm-gtags-mode-map (kbd "M-g M-p") 'helm-gtags-parse-file)
-;;           (define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
-;;           (define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
-;;           (define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack))))))
-;;
-;; (defun guanghui/post-init-helm-gtags () )
 
 
 (defun guanghui/post-init-persp-mode ()

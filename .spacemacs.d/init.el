@@ -218,13 +218,13 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(deeper-blue swheatgrass olarized-dark)
+   dotspacemacs-themes '(deeper-blue solarized-light)
    ;; If non nil the cursor color matches the state color.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 13
+                               :size 14
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -414,8 +414,8 @@ layers configuration."
       (spacemacs//set-monospaced-font "Source Code Pro" "Hiragino Sans GB" 14 16)))
 
   (setq-default powerline-default-separator 'arrow)
-
-
+  ;; (set-face-attribute 'default nil :family "Arial")
+  (set-face-attribute 'default nil :height 165)
   ;; Utility functions
   (defun bb/define-key (keymap &rest bindings)
     (declare (indent 1))
@@ -434,7 +434,6 @@ layers configuration."
 
   (add-hook 'text-mode-hook 'auto-fill-mode)
   (add-hook 'org-mode-hook 'auto-fill-mode)
-
   (remove-hook 'emacs-lisp-mode-hook 'auto-compile-mode)
   ;; http://emacsredux.com/blog/2014/04/05/which-function-mode/
   ;; when editing js file, this feature is very useful
@@ -500,6 +499,9 @@ layers configuration."
   (with-eval-after-load 'hungry-delete
     (diminish 'hungry-delete-mode))
 
+  (setq evil-emacs-state-cursor '("chartreuse3" (bar . 2)))
+
+
   (define-fringe-bitmap 'right-curly-arrow
     [#b00000000
      #b00000000
@@ -527,6 +529,6 @@ layers configuration."
     (setq projectile-switch-project-action 'zilongshanren/open-file-with-projectile-or-counsel-git))
 
 
-(setq custom-file (expand-file-name "custom.el" dotspacemacs-directory))
-(load custom-file 'no-error 'no-message)
-)
+  (setq custom-file (expand-file-name "custom.el" dotspacemacs-directory))
+  (load custom-file 'no-error 'no-message)
+  )
