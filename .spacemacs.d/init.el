@@ -224,7 +224,7 @@ values."
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 14
+                               :size 13
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -413,9 +413,8 @@ layers configuration."
     (when (and (spacemacs/system-is-mac) window-system)
       (spacemacs//set-monospaced-font "Source Code Pro" "Hiragino Sans GB" 14 16)))
 
+
   (setq-default powerline-default-separator 'arrow)
-  ;; (set-face-attribute 'default nil :family "Arial")
-  (set-face-attribute 'default nil :height 165)
   ;; Utility functions
   (defun bb/define-key (keymap &rest bindings)
     (declare (indent 1))
