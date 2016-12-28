@@ -151,6 +151,7 @@ a shoplist="gvim /home/kan/Projects/flight-reminder/deal-watcher/products.txt"
 a bk="backup"
 a e="emacs"
 a gtd="emacs ~/Dropbox/org-notes/gtd.org"
+a pp="g++ -std=c++11 main.cpp -o main"
 
 # commands
 a qf="find . -name '*.el' | xargs grep "

@@ -13,6 +13,7 @@
  '(ansi-color-names-vector
    ["#212526" "#ff4b4b" "#b4fa70" "#fce94f" "#729fcf" "#e090d7" "#8cc4ff" "#eeeeec"])
  '(beacon-blink-delay 0.3)
+ '(calendar-week-start-day 1)
  '(cfs--current-profile-name "profile1" t)
  '(command-log-mode-window-size 50)
  '(company-dabbrev-minimum-length 3)

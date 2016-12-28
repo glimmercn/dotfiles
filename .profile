@@ -22,3 +22,4 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 setxkbmap -layout us -option ctrl:nocaps
+source ~/git/nvm/nvm.sh

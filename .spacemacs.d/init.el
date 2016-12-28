@@ -37,7 +37,7 @@ values."
      ;; react
      better-defaults
      github
-     ycmd
+     ;; ycmd
      ;; (version-control :variables version-control-diff-tool 'git-gutter+
      ;;                  version-control-global-margin t)
      ;; osx
