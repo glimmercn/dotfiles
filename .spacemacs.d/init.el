@@ -78,7 +78,7 @@ values."
             c-c++-default-mode-for-headers 'c++-mode
             c-c++-enable-clang-support t)
      (auto-completion :variables auto-completion-enable-sort-by-usage t
-                      :disabled-for org markdown)
+                      :disabled-for markdown)
      (chinese :variables chinese-enable-youdao-dict t
               chinese-enable-fcitx t)
      zilongshanren
@@ -433,6 +433,8 @@ layers configuration."
 
   (add-hook 'text-mode-hook 'auto-fill-mode)
   (add-hook 'org-mode-hook 'auto-fill-mode)
+
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
   (remove-hook 'emacs-lisp-mode-hook 'auto-compile-mode)
   ;; http://emacsredux.com/blog/2014/04/05/which-function-mode/
   ;; when editing js file, this feature is very useful

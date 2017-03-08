@@ -150,7 +150,7 @@ a v="vim"
 a shoplist="gvim /home/kan/Projects/flight-reminder/deal-watcher/products.txt"
 a bk="backup"
 a e="emacs"
-a gtd="emacs ~/Dropbox/org-notes/gtd.org"
+# a gtd="emacs ~/Dropbox/org-notes/gtd.org"
 a pp="g++ -std=c++11 main.cpp -o main"
 
 # commands
@@ -170,3 +170,5 @@ a gp='git push '
 
 # OPAM configuration
 . /home/kan/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
+
+source ~/git/nvm/nvm.sh
