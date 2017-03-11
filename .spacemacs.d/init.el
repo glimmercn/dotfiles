@@ -378,6 +378,8 @@ any user code here.  The exception is org related code, which should be placed
 in `dotspacemacs/user-config'."
   (setq configuration-layer--elpa-archives
         '(("melpa"    . "melpa.org/packages/")
+	("gnu" . "http://elpa.gnu.org/packages/")
+	("org" . "http://orgmode.org/elpa/")
           ;; ("melpa-cn" . "https://elpa.zilongshanren.com/melpa/")
           ;; ("org-cn"   . "https://elpa.zilongshanren.com/org/")
           ;; ("gnu-cn"   . "https://elpa.zilongshanren.com/gnu/")
@@ -533,3 +535,17 @@ layers configuration."
   (setq custom-file (expand-file-name "custom.el" dotspacemacs-directory))
   (load custom-file 'no-error 'no-message)
   )
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (youdao-dictionary names chinese-word-at-point yaml-mode ws-butler window-numbering which-key wgrep web-mode web-beautify volatile-highlights visual-regexp-steroids visual-regexp uuidgen use-package toc-org smex smeargle smartparens slim-mode scss-mode sass-mode restart-emacs ranger rainbow-identifiers rainbow-delimiters pyvenv pytest pyenv-mode py-yapf prodigy popwin pip-requirements persp-mode peep-dired pcre2el spinner org-pomodoro alert log4e gntp orglue epic org-mac-link nodejs-repl mwim move-text mmm-mode markdown-toc markdown-mode macrostep lua-mode live-py-mode lispy zoutline linum-relative link-hint less-css-mode json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc jade-mode ivy-hydra info+ indent-guide impatient-mode simple-httpd ido-vertical-mode ibuffer-projectile projectile hydra hy-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers parent-mode help-fns+ helm-gtags helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-ag helm helm-core haml-mode google-translate golden-ratio gnuplot gitignore-mode github-clone github-browse-file gitconfig-mode gitattributes-mode git-timemachine git-messenger popup git-link gist gh marshal logito pcache ht ggtags flyspell-correct-ivy flyspell-correct flycheck-pos-tip flycheck flx-ido flx find-file-in-project fill-column-indicator fcitx expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-matchit evil-magit magit magit-popup git-commit with-editor evil-indent-plus evil-iedit-state iedit evil-exchange evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree etags-select engine-mode elisp-slime-nav discover-my-major makey diminish deft cython-mode counsel swiper ivy company-web web-completion-data company-tern dash-functional tern company-statistics company-quickhelp pos-tip company-c-headers company-anaconda company column-enforce-mode color-identifiers-mode cmake-font-lock cmake-mode clojure-snippets peg clean-aindent-mode cider-eval-sexp-fu eval-sexp-fu highlight queue pkg-info clojure-mode epl bind-map bind-key auto-yasnippet yasnippet auto-highlight-symbol auto-compile packed async anaconda-mode pythonic f dash s aggressive-indent ace-window ace-link avy 4clojure request quelpa package-build))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

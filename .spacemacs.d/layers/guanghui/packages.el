@@ -784,7 +784,8 @@ This segment overrides the modeline functionality of `org-mode-line-string'."
       ;; define the refile targets
       (setq org-agenda-files (quote ("~/Dropbox/org-notes" )))
       (setq org-default-notes-file "~/Dropbox/org-notes/gtd.org")
-      (setq org-agenda-start-on-weekday 1)
+      (setq org-agenda-start-on-weekday nil)
+      (setq org-agenda-span 2)
 
       (with-eval-after-load 'org-agenda
         (define-key org-agenda-mode-map (kbd "P") 'org-pomodoro)
