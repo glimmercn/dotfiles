@@ -36,7 +36,7 @@
         evil
         deft
         ;; elfeed
-        fcitx
+        ;;fcitx
         lua-mode
         ;; mwe-log-commands
         org-pomodoro
@@ -120,8 +120,8 @@ This segment overrides the modeline functionality of `org-mode-line-string'."
       (spacemacs/set-leader-keys-for-major-mode 'js2-mode
         "gd" 'etags-select-find-tag-at-point))))
 
-(defun guanghui/post-init-fcitx ()
-  (fcitx-aggressive-setup))
+;;(defun guanghui/post-init-fcitx ()
+;;  (fcitx-aggressive-setup))
 
 (defun guanghui/post-init-command-log ()
   (with-eval-after-load 'command-log-mode
@@ -785,7 +785,7 @@ This segment overrides the modeline functionality of `org-mode-line-string'."
       (setq org-agenda-files (quote ("~/Dropbox/org-notes" )))
       (setq org-default-notes-file "~/Dropbox/org-notes/gtd.org")
       (setq org-agenda-start-on-weekday nil)
-      (setq org-agenda-span 2)
+      (setq org-agenda-span 1)
 
       (with-eval-after-load 'org-agenda
         (define-key org-agenda-mode-map (kbd "P") 'org-pomodoro)
@@ -796,7 +796,7 @@ This segment overrides the modeline functionality of `org-mode-line-string'."
       ;;http://www.howardism.org/Technical/Emacs/journaling-org.html
       ;;add multi-file journal
       (setq org-capture-templates
-            '(("w" "work" entry (file+headline "~/Dropbox/org-notes/gtd.org" "Mentor")
+            '(("w" "work" entry (file+headline "~/Dropbox/org-notes/gtd.org" "Google")
                "* TODO [#A] %?     :WORK: \n  %i   \n"
                :empty-lines 1)
               ("p" "project" entry (file+headline "~/Dropbox/org-notes/gtd.org" "Projects")

@@ -49,7 +49,7 @@ values."
      prodigy
      search-engine
      (syntax-checking :variables syntax-checking-enable-by-default t)
-     (spell-checking :variables spell-checking-enable-by-default nil)
+     (spell-checking :variables spell-checking-enable-by-default t)
      yaml
      ;; (ruby :variables ruby-version-manager 'rvm)
      python
@@ -152,7 +152,7 @@ values."
                                     spacemacs-theme
                                     spinner
                                     tagedit
-                                    helm-flyspell
+                                    ;; helm-flyspell
                                     flyspell-correct-helm
                                     helm-c-yasnippet
                                     helm-pydoc
@@ -224,7 +224,7 @@ values."
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 13
+                               :size 18
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
