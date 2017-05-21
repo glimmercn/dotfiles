@@ -80,7 +80,7 @@ values."
      (auto-completion :variables auto-completion-enable-sort-by-usage t
                       :disabled-for markdown)
      (chinese :variables chinese-enable-youdao-dict t
-              chinese-enable-fcitx t)
+              chinese-enable-fcitx nil)
      zilongshanren
      guanghui
      )
@@ -224,7 +224,7 @@ values."
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 18
+                               :size 14
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)

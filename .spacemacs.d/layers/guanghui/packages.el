@@ -797,7 +797,7 @@ This segment overrides the modeline functionality of `org-mode-line-string'."
       ;;add multi-file journal
       (setq org-capture-templates
             '(("w" "work" entry (file+headline "~/Dropbox/org-notes/gtd.org" "Google")
-               "* TODO [#A] %?     :WORK: \n  %i   \n"
+               "* TODO [#A] %?     :WORK: \n  %i\n %U"
                :empty-lines 1)
               ("p" "project" entry (file+headline "~/Dropbox/org-notes/gtd.org" "Projects")
                "* TODO [#B] %?     :PROJECT: \n  %i\n %U"
