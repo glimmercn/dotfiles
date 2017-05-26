@@ -415,12 +415,9 @@ layers configuration."
   ;; key chord configuration
   (setq key-chord-two-keys-delay 0.5)
   (key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
-  (key-chord-define-global "ss" 'grok-jump-to-definition-at-point)
-  (key-chord-define-global "bb" 'grok-browse-go-back)
   (key-chord-define-global "nn" 'sp-up-sexp)
 
   (key-chord-mode 1)
-
 	
   ;;解决org表格里面中英文对齐的问题
   (when (configuration-layer/layer-usedp 'chinese)
