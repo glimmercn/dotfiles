@@ -403,13 +403,25 @@ in `dotspacemacs/user-config'."
        (define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
        (define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
        (define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack)))
-  )
+  (require 'key-chord)
+)
   
 
 (defun dotspacemacs/user-config ()
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
+  
+  ;; key chord configuration
+  (setq key-chord-two-keys-delay 0.5)
+  (key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
+  (key-chord-define-global "ss" 'grok-jump-to-definition-at-point)
+  (key-chord-define-global "bb" 'grok-browse-go-back)
+  (key-chord-define-global "nn" 'sp-up-sexp)
+
+  (key-chord-mode 1)
+
+	
   ;;解决org表格里面中英文对齐的问题
   (when (configuration-layer/layer-usedp 'chinese)
     (when (and (spacemacs/system-is-mac) window-system)
