@@ -175,6 +175,8 @@ This function is called at the very startup of Spacemacs initialization
 before layers configuration.
 You should not put any user code in there besides modifying the variable
 values."
+  (push "~/.spacemacs.d/download/" load-path)
+
   ;; This setq-default sexp is an exhaustive list of all the supported
   ;; spacemacs settings.
   (setq-default
@@ -380,9 +382,6 @@ in `dotspacemacs/user-config'."
         '(("melpa"    . "melpa.org/packages/")
 	("gnu" . "http://elpa.gnu.org/packages/")
 	("org" . "http://orgmode.org/elpa/")
-          ;; ("melpa-cn" . "https://elpa.zilongshanren.com/melpa/")
-          ;; ("org-cn"   . "https://elpa.zilongshanren.com/org/")
-          ;; ("gnu-cn"   . "https://elpa.zilongshanren.com/gnu/")
           ))
  
   ;; https://github.com/syl20bnr/spacemacs/issues/2705
@@ -411,8 +410,35 @@ in `dotspacemacs/user-config'."
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
-  
-  ;; key chord configuration
+
+  ;; scroll back and restore window appearance configuration.
+  (defvar unscroll-hscroll nil
+    "Hsroll for next call to 'unscroll' .")
+  (defvar unscroll-point (make-marker)
+    "Cursor position for next call of 'unscroll'.")
+  (defvar unscroll-window-start (make-marker)
+    "Window start for next call to 'unscroll'.")
+
+  (defun unscroll-maybe-remember ()
+    (if (not (get last-command 'unscrollable))
+        (progn
+          (set-marker unscroll-point (point))
+          (set-marker unscroll-window-start (window-start))
+          (setq unscroll-hscroll (window-hscroll)))))
+
+  (defun unscroll ()
+    "Revert to 'last window appearance."
+    (interactive)
+    (goto-char unscroll-point)
+    (set-window-start nil unscroll-window-start)
+    (set-window-hscroll nil unscroll-hscroll))
+
+  (put 'evil-scroll-up 'unscrollable t)
+  (put 'evil-scroll-down 'unscrollable t)
+  (put 'evil-scroll-left 'unscrollable t)
+  (put 'evil-scroll-right 'unscrollable t)
+
+  ;; Key chord configuration
   (setq key-chord-two-keys-delay 0.5)
   (key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
   (key-chord-define-global "nn" 'sp-up-sexp)
