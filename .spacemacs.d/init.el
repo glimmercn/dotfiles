@@ -424,7 +424,7 @@ layers configuration."
         (progn
           (set-marker unscroll-point (point))
           (set-marker unscroll-window-start (window-start))
-          (setq unscroll-hscroll (window-hscroll)))))
+	  (setq unscroll-hscroll (window-hscroll)))))
 
   (defun unscroll ()
     "Revert to 'last window appearance."
@@ -432,6 +432,26 @@ layers configuration."
     (goto-char unscroll-point)
     (set-window-start nil unscroll-window-start)
     (set-window-hscroll nil unscroll-hscroll))
+
+  (defadvice evil-scroll-up (before remember-for-unscroll
+                                    activate compile)
+    "Remember where we started from, for 'unscroll'."
+    (unscroll-maybe-remember))
+
+  (defadvice evil-scroll-down (before remember-for-unscroll
+                                      activate compile)
+    "Remember where we started from, for 'unscroll'."
+    (unscroll-maybe-remember))
+
+  (defadvice evil-scroll-left (before remember-for-unscroll
+                                      activate compile)
+    "Remember where we started from, for 'unscroll'."
+    (unscroll-maybe-remember))
+
+  (defadvice evil-scroll-right (before remember-for-unscroll
+                                       activate compile)
+    "Remember where we started from, for 'unscroll'."
+    (unscroll-maybe-remember))
 
   (put 'evil-scroll-up 'unscrollable t)
   (put 'evil-scroll-down 'unscrollable t)
