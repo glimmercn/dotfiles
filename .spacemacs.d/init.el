@@ -424,7 +424,7 @@ layers configuration."
         (progn
           (set-marker unscroll-point (point))
           (set-marker unscroll-window-start (window-start))
-	  (setq unscroll-hscroll (window-hscroll)))))
+          (setq unscroll-hscroll (window-hscroll)))))
 
   (defun unscroll ()
     "Revert to 'last window appearance."
@@ -432,6 +432,9 @@ layers configuration."
     (goto-char unscroll-point)
     (set-window-start nil unscroll-window-start)
     (set-window-hscroll nil unscroll-hscroll))
+
+  (define-key evil-insert-state-map (kbd "C-b") 'unscroll)
+  (define-key evil-normal-state-map (kbd "C-b") 'unscroll)
 
   (defadvice evil-scroll-up (before remember-for-unscroll
                                     activate compile)
