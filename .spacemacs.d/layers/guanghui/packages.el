@@ -808,6 +808,9 @@ This segment overrides the modeline functionality of `org-mode-line-string'."
               ("t" "trivia" entry (file+headline "~/Dropbox/org-notes/gtd.org" "Trivia")
                "* TODO [#C] %?     :TRIVIA: \n  %i\n %U"
                :empty-lines 1)
+              ("i" "ideas" entry (file+headline "~/Dropbox/org-notes/gtd.org" "Ideas")
+               "* %?     :ideas:grow: \n  %i\n %U"
+               :empty-lines 1)
               ;; still need some work to get ubuntu version of retrieve-chrome-current-tab-url.
               ("c" "Chrome" entry (file+headline "~/Dropbox/org-notes/notes.org" "Quick notes")
                "* TODO [#C] %?\n %(zilongshanren/retrieve-chrome-current-tab-url)\n %i\n %U"
