@@ -87,7 +87,7 @@
  '(org-agenda-skip-deadline-if-done t)
  '(org-agenda-skip-deadline-prewarning-if-scheduled t)
  '(org-agenda-skip-scheduled-if-done nil)
- '(org-agenda-start-on-weekday nil)
+ '(org-agenda-start-on-weekday 1)
  '(org-agenda-text-search-extra-files (quote (agenda-archives)))
  '(org-deadline-warning-days 14)
  '(org-fast-tag-selection-single-key (quote expert))

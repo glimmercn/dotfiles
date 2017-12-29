@@ -811,15 +811,16 @@ This segment overrides the modeline functionality of `org-mode-line-string'."
               ("i" "ideas" entry (file+headline "~/Dropbox/org-notes/gtd.org" "Ideas")
                "* %?     :ideas:grow: \n  %i\n %U"
                :empty-lines 1)
-              ;; still need some work to get ubuntu version of retrieve-chrome-current-tab-url.
-              ("c" "Chrome" entry (file+headline "~/Dropbox/org-notes/notes.org" "Quick notes")
-               "* TODO [#C] %?\n %(zilongshanren/retrieve-chrome-current-tab-url)\n %i\n %U"
+              ;; still need some work to get Ubuntu version of retrieve-chrome-current-tab-url.
+              ("c" "Note From Chrome" entry (file+headline "~/Dropbox/org-notes/gtd.org" "Notes")
+               "* %?\n %(zilongshanren/retrieve-chrome-current-tab-url)\n %i"
                :empty-lines 1)
-              ("l" "links" entry (file+headline "~/Dropbox/org-notes/notes.org" "Quick notes")
-               "* TODO [#C] %?\n  %i\n %a \n %U"
+              ;; create links to files.
+              ("l" "Note From links" entry (file+headline "~/Dropbox/org-notes/gtd.org" "Notes")
+               "* TODO %?\n  %i\n %a"
                :empty-lines 1)
-              ("n" "notes" entry (file+headline "~/Dropbox/org-notes/notes.org" "Quick notes")
-               "* %?\n  %i\n %U"
+              ("n" "Plain Note" entry (file+headline "~/Dropbox/org-notes/gtd.org" "Notes")
+               "* %?\n  %i"
                :empty-lines 1)
               ("j" "Journal Entry"
                entry (file+datetree "~/Dropbox/org-notes/journal.org")

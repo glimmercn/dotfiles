@@ -168,3 +168,9 @@ a gk='gitk --all&'
 a gx='gitx --all'
 a gp='git push '
 
+
+# added by Anaconda3 4.4.0 installer
+export PATH="/anaconda/bin:$PATH"
+
+# added by Anaconda3 4.4.0 installer
+export PATH="/Users/kanh/anaconda/bin:$PATH"
